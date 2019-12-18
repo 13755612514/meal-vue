@@ -9,7 +9,7 @@
     <el-form ref="login_form_ref" label-width="0px" class="login_form" :model="login_form" :rules="login_form_rules">
       <!-- 用户名 -->
       <el-form-item prop="email">
-        <el-input placeholder="用户名"
+        <el-input placeholder="email"
                   prefix-icon="el-icon-user"
                   v-model="login_form.email"></el-input>
       </el-form-item>
@@ -67,10 +67,12 @@
                         method: 'post',
                         data: this.login_form
                     }).then((res) => {
-                        console.log("sucess");
+                        console.log(res.data);
+                        window.sessionStorage.clear();
+                        this.$router.push("/Home")
                     }).catch()
                 });
-            }
+            },
         }
     }
 </script>
@@ -91,8 +93,8 @@
     transform: translate(-50%,-50%);
 
     .avatar_box{
-      width: 130px;
-      height: 130px;
+      width: 110px;
+      height: 110px;
       border: 1px solid #eee;
       border-radius: 50%;
       padding: 10px;
