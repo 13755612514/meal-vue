@@ -34,9 +34,6 @@
 </script>
 
 <style lang="less" scoped>
-  p{
-    text-decoration:underline;
-  }
   .nav_menu{
     width: 100%;
     height: 280px;
@@ -60,6 +57,7 @@
       z-index: 3;
 
       .user_info_avatar{
+        float: left;
         width: 68px;
         height: 68px;
         margin-top: 14px;
@@ -72,11 +70,18 @@
         }
       }
       .user_info_brief{
+        float: left;
         margin-left: 10px;
+        margin-top: 10px;
         .unLogin{
+          text-decoration:underline;
           position: absolute;
-          color: #fefefe;
-          font-size: 16px;
+          color: black;
+          font-size: 18px;
+          font-weight: bold;
+          span{
+            color: aqua;
+          }
         }
       }
     }
